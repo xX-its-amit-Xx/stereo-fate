@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# caches
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.hydra/
+outputs/
+multirun/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# data: keep the tiny bundled subsample + reference tables (committed), ignore large
+# downloads and run artifacts
+*.gef
+data/raw/
+data/downloads/
+*.h5ad
+!stereo_fate/data/mosta_e95_subsample.h5ad
+
+# results scratch (figures committed via -f in the commit step)
+*.log
+
+# cookbook shared cache (rebuilt by notebooks)
+cookbook/_cache/

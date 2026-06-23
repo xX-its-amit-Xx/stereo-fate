@@ -1,0 +1,67 @@
+# stereo-fate pipeline configuration (hydra).
+# Override any field on the CLI, e.g.:
+#   stereo-fate run input.path=section.h5ad fate.target=Cardiac fate.progenitor=Mesenchyme
+defaults:
+  - _self_
+
+input:
+  path: bundled          # "bundled" -> shipped subsample; or a .h5ad / .gef path
+  bin_size: 50           # stereopy GEF binning (ignored for .h5ad)
+
+output:
+  dir: outputs
+  save_h5ad: true
+
+spatial:
+  min_counts: 50
+  min_genes: 5
+  min_cells: 3
+  target_sum: 1.0e4
+  n_top_genes: 2000
+  n_pcs: 30
+  n_neighbors: 15
+  leiden_resolution: 1.0
+  spatial_weight: 0.3    # blend spatial graph into clustering for contiguous domains
+  n_spatial_neighs: 6
+  random_state: 0
+
+fate:
+  target: Cardiac        # the fate whose ingredients we want
+  progenitor: Mesenchyme # progenitor compartment (null -> contrast vs all)
+  method: auto           # auto | pseudotime | contrast
+
+tf:
+  organism: mouse
+  net_csv: null          # custom regulon table; null -> CollecTRI via decoupler
+
+comm:
+  resource: mouseconsensus
+  top_n_candidates: 200
+  n_neighs: 6
+  n_perms: 100        # liana permutations (raise for production with RAM headroom)
+  n_jobs: 1           # liana workers; keep 1 on memory-tight machines (spawn is heavy)
+
+recipe:
+  w_intrinsic: 0.5
+  w_extrinsic: 0.5
+
+funcgen:
+  reference_csv: null    # null -> bundled curated perturbation reference
+
+validation:
+  top_k: 25
+  n_random: 1000
+  known_drivers:         # known cardiac-lineage regulators (edit per target fate)
+    - Nkx2-5
+    - Gata4
+    - Tbx5
+    - Mef2c
+    - Hand2
+    - Hand1
+    - Isl1
+    - Gata6
+    - Tbx20
+    - Srf
+
+# Marker panel for cell-type annotation (mouse organogenesis). null -> package default.
+markers: null

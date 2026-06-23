@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    name: tests + smoke pipeline (py${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install package (core + dev)
+        run: uv pip install --system -e '.[dev]'
+
+      - name: Lint
+        run: ruff check stereo_fate
+
+      - name: Resource guard sanity
+        run: stereo-fate check
+
+      - name: Unit + end-to-end tests
+        # offline: use the bundled CollecTRI subset so no network is needed
+        env:
+          STEREO_FATE_NET: stereo_fate/data/collectri_mouse_subset.csv
+        run: python -m pytest -q
+
+      - name: Smoke pipeline (bundled subsample, offline)
+        run: |
+          stereo-fate run \
+            input.path=bundled \
+            fate.target=Cardiac fate.progenitor=Mesenchyme \
+            tf.net_csv=stereo_fate/data/collectri_mouse_subset.csv \
+            output.dir=ci_outputs output.save_h5ad=false
+
+      - name: Show recipe head
+        run: |
+          echo "=== recipe.csv ===" && head -n 15 ci_outputs/recipe.csv
+          echo "=== prioritized_recipe.csv ===" && head -n 15 ci_outputs/prioritized_recipe.csv
+
+      - name: Upload outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-outputs-py${{ matrix.python-version }}
+          path: ci_outputs/
+          if-no-files-found: ignore

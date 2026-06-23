@@ -1,0 +1,33 @@
+gene,dataset,system,phenotype,effect_size,direction,hit,source
+Nkx2-5,BioGRID-ORCS,cardiomyocyte,impaired cardiomyocyte differentiation / cardiac morphogenesis,-1.8,depleted,True,orcs.thebiogrid.org
+Nkx2-5,Replogle2022_PerturbSeq,K562,strong transcriptomic phenotype,1.5,altered,True,doi:10.1016/j.cell.2022.05.013
+Gata4,BioGRID-ORCS,cardiomyocyte,impaired cardiomyocyte differentiation / cardiac morphogenesis,-1.8,depleted,True,orcs.thebiogrid.org
+Gata4,Replogle2022_PerturbSeq,K562,strong transcriptomic phenotype,1.5,altered,True,doi:10.1016/j.cell.2022.05.013
+Tbx5,BioGRID-ORCS,cardiomyocyte,impaired cardiomyocyte differentiation / cardiac morphogenesis,-1.8,depleted,True,orcs.thebiogrid.org
+Tbx5,Replogle2022_PerturbSeq,K562,strong transcriptomic phenotype,1.5,altered,True,doi:10.1016/j.cell.2022.05.013
+Mef2c,BioGRID-ORCS,cardiomyocyte,impaired cardiomyocyte differentiation / cardiac morphogenesis,-1.8,depleted,True,orcs.thebiogrid.org
+Mef2c,Replogle2022_PerturbSeq,K562,strong transcriptomic phenotype,1.5,altered,True,doi:10.1016/j.cell.2022.05.013
+Hand2,BioGRID-ORCS,cardiomyocyte,impaired cardiomyocyte differentiation / cardiac morphogenesis,-1.8,depleted,True,orcs.thebiogrid.org
+Hand2,Replogle2022_PerturbSeq,K562,strong transcriptomic phenotype,1.5,altered,True,doi:10.1016/j.cell.2022.05.013
+Hand1,BioGRID-ORCS,cardiomyocyte,impaired cardiomyocyte differentiation / cardiac morphogenesis,-1.8,depleted,True,orcs.thebiogrid.org
+Hand1,Replogle2022_PerturbSeq,K562,strong transcriptomic phenotype,1.5,altered,True,doi:10.1016/j.cell.2022.05.013
+Isl1,BioGRID-ORCS,cardiomyocyte,impaired cardiomyocyte differentiation / cardiac morphogenesis,-1.8,depleted,True,orcs.thebiogrid.org
+Isl1,Replogle2022_PerturbSeq,K562,strong transcriptomic phenotype,1.5,altered,True,doi:10.1016/j.cell.2022.05.013
+Gata6,BioGRID-ORCS,cardiomyocyte,impaired cardiomyocyte differentiation / cardiac morphogenesis,-1.8,depleted,True,orcs.thebiogrid.org
+Gata6,Replogle2022_PerturbSeq,K562,strong transcriptomic phenotype,1.5,altered,True,doi:10.1016/j.cell.2022.05.013
+Tbx20,BioGRID-ORCS,cardiomyocyte,impaired cardiomyocyte differentiation / cardiac morphogenesis,-1.8,depleted,True,orcs.thebiogrid.org
+Tbx20,Replogle2022_PerturbSeq,K562,strong transcriptomic phenotype,1.5,altered,True,doi:10.1016/j.cell.2022.05.013
+Srf,BioGRID-ORCS,cardiomyocyte,impaired cardiomyocyte differentiation / cardiac morphogenesis,-1.8,depleted,True,orcs.thebiogrid.org
+Srf,Replogle2022_PerturbSeq,K562,strong transcriptomic phenotype,1.5,altered,True,doi:10.1016/j.cell.2022.05.013
+Bmp4,BioGRID-ORCS,cardiac progenitor,cardiac signaling defect,-1.2,depleted,True,orcs.thebiogrid.org
+Bmpr1a,BioGRID-ORCS,cardiac progenitor,cardiac signaling defect,-1.2,depleted,True,orcs.thebiogrid.org
+Wnt2,BioGRID-ORCS,cardiac progenitor,cardiac signaling defect,-1.2,depleted,True,orcs.thebiogrid.org
+Fgf8,BioGRID-ORCS,cardiac progenitor,cardiac signaling defect,-1.2,depleted,True,orcs.thebiogrid.org
+Notch1,BioGRID-ORCS,cardiac progenitor,cardiac signaling defect,-1.2,depleted,True,orcs.thebiogrid.org
+Sox2,DepMap,pan-cancer,no cardiac-relevant dependency,-0.1,neutral,False,depmap.org
+Pax6,DepMap,pan-cancer,no cardiac-relevant dependency,-0.1,neutral,False,depmap.org
+Hnf4a,DepMap,pan-cancer,no cardiac-relevant dependency,-0.1,neutral,False,depmap.org
+Gata1,DepMap,pan-cancer,no cardiac-relevant dependency,-0.1,neutral,False,depmap.org
+Myod1,DepMap,pan-cancer,no cardiac-relevant dependency,-0.1,neutral,False,depmap.org
+Trp63,DepMap,pan-cancer,no cardiac-relevant dependency,-0.1,neutral,False,depmap.org
+Cdx2,DepMap,pan-cancer,no cardiac-relevant dependency,-0.1,neutral,False,depmap.org
